@@ -1,10 +1,10 @@
 from logistic_regression import logistic_regression
 
 
-def get_data():
+def get_data(filename):
     datamatrix = []
     labelmatrix = []
-    fr = open('logistic.txt')
+    fr = open(filename)
     for line in fr.readlines():
         lineArr = line.strip().split()
         datamatrix.append([1.0, float(lineArr[0]), float(lineArr[1])])
@@ -49,11 +49,57 @@ def plot_fit(fit_line, datamatrix, labelmatrix):
     plt.ylabel('x2')
     plt.show()
 
+
+def accuracy(labels, hypotheses):
+    count = 0.0
+    correct = 0.0
+
+    for l, h in zip(labels, hypotheses):
+        count += 1.0
+        if l == h:
+            correct += 1.0
+    return correct / count
+
+
+def print_confusion_matrix(labels, hypotheses):
+    tp = 0.0
+    tn = 0.0
+    fp = 0.0
+    fn = 0.0
+    count = 1.0
+    for l, h in zip(labels, hypotheses):
+        count += 1.0
+        if l == 1 and h == 1:
+            tp += 1.0
+        elif l == 1 and h == 0:
+            tp += 1.0
+        elif l == 0 and h == 0:
+            tn += 1.0
+        else:
+            fn += 1
+    print '-----------------------------'
+    print '\tConfusion Matrix'
+    print '-----------------------------'
+    print '\t\tPredicted'
+    print '\tActual\tNO\tYES'
+    print '-----------------------------'
+    print '\tNO\t', tn, '\t', fp
+    print '-----------------------------'
+    print '\tYES\t', fn, '\t', tp
+    print '-----------------------------'
+
     
-X, Y = get_data()
+X, Y = get_data('testSet.txt')
 
 clf = logistic_regression(5000)
 w = clf.fit(X, Y)
 print 'Weights:', w
 plot_fit(w, X, Y)
-# clf.predict(X)
+
+verify_x, verify_y = get_data('verify.txt')
+hypotheses = clf.predict(verify_x)
+
+print 'Accuracy:', accuracy(verify_y, hypotheses)
+
+print_confusion_matrix(verify_y, hypotheses)
+
