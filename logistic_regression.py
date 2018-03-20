@@ -29,5 +29,12 @@ class logistic_regression(classifier):
  
 
     def predict(self, X):
-        print 'Logistic Regression classifier - predict'
+        hypotheses = []
+        for x in X:
+            prob = self.sigmoid(sum(x*self.weights))
+            if prob > 0.5:
+                hypotheses.append(1)
+            else:
+                hypotheses.append(0)
+        return hypotheses
 
