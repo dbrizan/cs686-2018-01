@@ -7,7 +7,7 @@ Practice python OOP by completing the implementation. Details on Canvas. Files a
 * [logger.py](https://github.com/dbrizan/cs686-2018-01/blob/master/logger.py)
 * [logger_test.py](https://github.com/dbrizan/cs686-2018-01/blob/master/logger.py)
 
-## Not a Lab, but do it anyway:
+## Exercise: Logistic Regression (Not a Lab, but do it anyway):
 
 Code for 2-class Logistic Regression:
 
@@ -19,3 +19,7 @@ Data for 2-class Logistic Regression
 
 * [testSet.txt](https://github.com/pbharrin/machinelearninginaction/blob/master/Ch05/testSet.txt) -- a synthetic dataset
 * [verify.txt](https://github.com/dbrizan/cs686-2018-01/blob/master/verify.txt) -- a subset of the above, for demo only
+
+
+## Exercise: Decision Tree (Not a Lab, but do it anyway):
+* [animals.csv](https://github.com/dbrizan/cs686-2018-01/blob/master/animals.csv) -- the data, inspired by [Zoo animals](https://archive.ics.uci.edu/ml/datasets/zoo)
