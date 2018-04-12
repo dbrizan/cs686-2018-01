@@ -1,0 +1,9 @@
+name,convering,eggs,lives_in,oxygenates,legs,tail,category
+aardvark,hair,0,ground,air,4,0,mammal
+antelope,hair,0,ground,air,4,1,mammal
+bass,scales,1,water,water,0,1,fish
+carp,scales,1,water,water,0,1,fish
+chicken,feathers,1,ground,air,2,1,bird
+scorpion,exoskeleton,0,ground,air,8,1,invert
+starfish,skin,1,water,water,5,0,invert
+swan,feathers,1,air,air,2,1,bird
